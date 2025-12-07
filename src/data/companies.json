@@ -5,8 +5,8 @@
     "id": 1
   },
   {
-    "name": "atlassian",
-    "path": "/companies/atlassian.svg",
+    "name": "Grazitti Interactive",
+    "path": "/companies/grazitti-logo.svg",
     "id": 2
   },
   {
@@ -20,8 +20,8 @@
     "id": 4
   },
   {
-    "name": "meta",
-    "path": "/companies/meta.svg",
+    "name": "skillstone",
+    "path": "/companies/skillstone.png",
     "id": 5
   },
   {
@@ -39,4 +39,5 @@
     "path": "/companies/uber.svg",
     "id": 8
   }
+   
 ]

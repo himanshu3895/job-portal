@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
@@ -26,7 +25,7 @@ const buttonVariants = cva(
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
-        xl: "h-14 sm:h-16 rounded-md px-14 text-lg sm:text-xl font-bold", // added
+        xl: "h-14 sm:h-16 rounded-md px-14 text-lg sm:text-xl font-bold", 
       },
     },
     defaultVariants: {

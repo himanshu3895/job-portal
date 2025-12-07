@@ -1,6 +1,5 @@
 import supabaseClient from "@/utils/supabase";
 
-// Fetch Jobs
 export async function getJobs(token, { location, company_id, searchQuery }) {
   const supabase = await supabaseClient(token);
   let query = supabase
@@ -28,8 +27,6 @@ export async function getJobs(token, { location, company_id, searchQuery }) {
 
   return data;
 }
-
-// Read Saved Jobs
 export async function getSavedJobs(token) {
   const supabase = await supabaseClient(token);
   const { data, error } = await supabase
@@ -44,7 +41,6 @@ export async function getSavedJobs(token) {
   return data;
 }
 
-// Read single job
 export async function getSingleJob(token, { job_id }) {
   const supabase = await supabaseClient(token);
   let query = supabase
@@ -64,13 +60,11 @@ export async function getSingleJob(token, { job_id }) {
 
   return data;
 }
-
-// - Add / Remove Saved Job
 export async function saveJob(token, { alreadySaved }, saveData) {
   const supabase = await supabaseClient(token);
 
   if (alreadySaved) {
-    // If the job is already saved, remove it
+    
     const { data, error: deleteError } = await supabase
       .from("saved_jobs")
       .delete()
@@ -83,7 +77,7 @@ export async function saveJob(token, { alreadySaved }, saveData) {
 
     return data;
   } else {
-    // If the job is not saved, add it to saved jobs
+    
     const { data, error: insertError } = await supabase
       .from("saved_jobs")
       .insert([saveData])
@@ -98,7 +92,7 @@ export async function saveJob(token, { alreadySaved }, saveData) {
   }
 }
 
-// - job isOpen toggle - (recruiter_id = auth.uid())
+
 export async function updateHiringStatus(token, { job_id }, isOpen) {
   const supabase = await supabaseClient(token);
   const { data, error } = await supabase
@@ -115,7 +109,7 @@ export async function updateHiringStatus(token, { job_id }, isOpen) {
   return data;
 }
 
-// get my created jobs
+
 export async function getMyJobs(token, { recruiter_id }) {
   const supabase = await supabaseClient(token);
 
@@ -132,7 +126,7 @@ export async function getMyJobs(token, { recruiter_id }) {
   return data;
 }
 
-// Delete job
+
 export async function deleteJob(token, { job_id }) {
   const supabase = await supabaseClient(token);
 
@@ -150,7 +144,7 @@ export async function deleteJob(token, { job_id }) {
   return data;
 }
 
-// - post job
+
 export async function addNewJob(token, _, jobData) {
   const supabase = await supabaseClient(token);
 
